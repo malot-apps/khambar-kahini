@@ -1,0 +1,30 @@
+*{box-sizing:border-box}
+body{margin:0;background:#10131b;color:#fff;font-family:system-ui,"Noto Sans Bengali",sans-serif}
+#game{max-width:900px;margin:auto;min-height:100vh;background:#171b25}
+header{padding:12px 14px;background:#202636;display:flex;justify-content:space-between;gap:10px;align-items:center;position:sticky;top:0;z-index:5}
+.brand{font-weight:900;font-size:20px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;font-size:13px}
+.stats span{background:#30384d;padding:6px 8px;border-radius:10px}
+.scene{height:430px;position:relative;overflow:hidden;background:linear-gradient(#78c7ff 0 60%,#b9d9a0 60% 72%,#555 72%)}
+.sky{position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,#fff8 0 4%,transparent 5%);opacity:.6}
+.city{position:absolute;top:105px;width:100%;font-size:55px;opacity:.7;white-space:nowrap}
+.wires{position:absolute;top:80px;width:100%;font-size:22px;color:#222}
+.road{position:absolute;bottom:0;height:28%;width:100%;background:#3f4148;border-top:5px solid #aaa}
+#player{position:absolute;bottom:92px;left:47%;font-size:48px;transition:.2s}
+.pole{position:absolute;bottom:90px;text-align:center;font-size:20px;color:#ffd54a;cursor:pointer;z-index:2}
+.pole-body{width:13px;height:180px;background:#6b6b6b;margin:0 auto;border-radius:5px}
+.pole small{display:block;color:#222;background:#fff;padding:3px 5px;border-radius:5px}
+.p1{left:16%}.p2{left:49%}.p3{left:80%}
+.bubble{position:absolute;left:40%;top:25px;max-width:50%;background:#fff;color:#111;padding:12px 14px;border-radius:16px;font-weight:700;box-shadow:0 5px 20px #0005}
+.hidden{display:none!important}
+.panel{padding:16px;border-top:1px solid #30384d}
+.panel h2{margin:0 0 8px;font-size:18px}
+.panel p{color:#cbd2df}
+.buttons{display:flex;flex-wrap:wrap;gap:9px}
+button{border:0;border-radius:12px;padding:13px 14px;background:#f5b72d;color:#151515;font-weight:800;cursor:pointer}
+button:active{transform:scale(.97)}
+#office{background:#24202b;text-align:center}
+.villain{font-size:80px}
+.dialogue{background:#fff;color:#111;border-radius:15px;padding:12px;margin:10px auto;max-width:600px}
+footer{padding:12px;text-align:center;color:#7f8ba3;font-size:12px}
+@media(max-width:600px){.scene{height:360px}.city{font-size:38px;top:100px}.pole-body{height:150px}#player{bottom:78px}.p1{left:10%}.p2{left:46%}.p3{left:78%}}

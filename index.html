@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>খাম্বার কাহিনী — v0.1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game">
+  <header>
+    <div class="brand">⚡ খাম্বার কাহিনী</div>
+    <div class="stats">
+      <span>⚡ <b id="power">OFF</b></span>
+      <span>🔋 <b id="battery">67</b>%</span>
+      <span>😤 <b id="frustration">0</b></span>
+      <span>🏆 <b id="score">0</b></span>
+    </div>
+  </header>
+
+  <main>
+    <section id="street" class="scene">
+      <div class="sky"></div>
+      <div class="city">🏢　🏠　🏪　🏢　🏠</div>
+      <div class="wires">━━━━━━━━━━━━━━━━━━━━━━━━</div>
+      <div class="pole p1" data-pole="1">⚡<div class="pole-body"></div><small>খাম্বা ১</small></div>
+      <div class="pole p2" data-pole="2">⚡<div class="pole-body"></div><small>খাম্বা ২</small></div>
+      <div class="pole p3" data-pole="3">⚡<div class="pole-body"></div><small>খাম্বা ৩</small></div>
+      <div class="road"></div>
+      <div id="player">🧍</div>
+      <div id="bubble" class="bubble hidden"></div>
+    </section>
+
+    <section class="panel">
+      <h2 id="mission">মিশন: খাম্বাগুলো পরীক্ষা করো</h2>
+      <p id="message">যেকোনো খাম্বায় চাপ দিয়ে পরীক্ষা করো।</p>
+      <div class="buttons">
+        <button onclick="checkPole()">🔎 খাম্বা চেক</button>
+        <button onclick="complain()">📞 অভিযোগ</button>
+        <button onclick="waitPower()">⏳ অপেক্ষা</button>
+      </div>
+    </section>
+
+    <section id="office" class="panel hidden">
+      <div class="villain">👔</div>
+      <h2>🏢 অভিযোগ অফিস</h2>
+      <div class="dialogue">
+        <b>পাওয়ার বাবু:</b>
+        <p id="villainText">একটু অপেক্ষা করুন…</p>
+      </div>
+      <div class="buttons">
+        <button onclick="plan()">🎙️ “We have a plan”</button>
+        <button onclick="askPlan()">❓ প্ল্যানটা কী?</button>
+        <button onclick="closeOffice()">🚪 বাইরে যান</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>v0.1 Prototype • Fictional satire • নিরাপদভাবে খেলুন</footer>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
