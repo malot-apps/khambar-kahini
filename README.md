@@ -1,26 +1,49 @@
-# খাম্বার কাহিনী — v0.1 Prototype
+# ⚡ খাম্বার কাহিনী
 
-এটি একটি ছোট browser-game prototype। বর্তমান সংস্করণে:
-- ৩টি fictional electric pole
-- pole interaction
-- score/battery/frustration
-- complaint office
-- fictional villain “পাওয়ার বাবু”
-- “We have a plan” voice-এর জন্য placeholder
-- random power on/off event
+খাম্বা আছে, তার আছে… কারেন্ট কোথায়?
 
-## চালানো
-`index.html` ব্রাউজারে খুললেই চলবে।
+একটি Bengali-first, mobile-friendly, ব্যাঙ্গাত্মক 2D ইন্ডি গেম। কোনো ব্যাকএন্ড, ডাটাবেস, লগইন বা পেইড API নেই। Pure HTML/CSS/JS, Vercel static hosting-এ চলবে।
 
-## Custom voice
-নিজের voice যোগ করতে পরে `audio/` folder তৈরি করে JavaScript-এর `Audio()` দিয়ে `we_have_a_plan.mp3` চালানো যাবে।
+## run / build
+```
+npm i -g serve   # or any static server
+serve .
+```
+No build step required. Deploy simply by importing the repo on Vercel (framework: Other).
 
-## পরের Version
-1. Player walking controls
-2. proper 2D graphics
-3. Bengali dialogue system
-4. multiple levels
-5. sound effects
-6. save/high-score
-7. Android packaging
-8. fictional character art and boss UI
+## structure
+```
+index.html
+vercel.json
+assets/
+  style.css
+  js/
+    main.js      - bootstrap & routing
+    engine.js    - canvas engine, player, render loop, HUD, dialogs
+    levels.js    - all 5 levels
+    data.js      - Bengali content (poles, dialogues, levels)
+    ui.js        - screens (home, levels, settings…), result card
+    audio.js     - audio manager (graceful fail)
+    utils.js     - storage, toast, share, helpers
+  audio/
+    we_have_a_plan.mp3   <- OPTIONAL custom Power Babu voice
+    sfx/                  <- optional sound effects
+    music/                <- optional background music
+```
+
+## custom voice
+Place your own file at:
+```
+assets/audio/we_have_a_plan.mp3
+```
+The game only plays it **if the file exists**; otherwise it continues silently. No error. The game never depends on it.
+
+## controls
+- Desktop: Arrows / WASD to move, Space / E to interact, P to pause
+- Mobile: left virtual joystick + right "যোগাযোগ" button
+
+## save
+localStorage only (`khambar_save_v1`). Resetting progress via Settings.
+
+## safety note
+Fully fictional characters & institutions. The "Power Babu", poles and office are satire — no real person, party, or government seal. No dangerous electrical instructions are modeled.
